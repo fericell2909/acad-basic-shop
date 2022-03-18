@@ -1,8 +1,12 @@
-import {ceckLS, pokemonRender} from './pokemons.js'
+import { pokemonRender,getPokemons} from './pokemons.js'
 
 let bag = localStorage.getItem('pokeBag') ? JSON.parse(localStorage.getItem('pokeBag')) : []
 
-export const catchPokemon = (id) => {
+
+export const catchPokemon = async (id) => {
+
+
+  let ceckLS = localStorage.getItem('pokemons') ? JSON.parse(localStorage.getItem('pokemons')) : []
 
   const pokemon = ceckLS.find((pokemon)=> pokemon.id === id)
   bag.push(pokemon)
@@ -11,6 +15,7 @@ export const catchPokemon = (id) => {
 
 
 export const removePokemon = (id) => {
+    let ceckLS = localStorage.getItem('pokemons') ? JSON.parse(localStorage.getItem('pokemons')) : []
   const pokemon = ceckLS.find((pokemon)=> pokemon.id === id)
   bag.splice(bag.indexOf(pokemon), 1)
   localStorage.setItem('pokeBag', JSON.stringify(bag))

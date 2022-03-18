@@ -1,6 +1,6 @@
 const url = 'https://pokeapi.co/api/v2/pokemon?limit=20'
 
-const getPokemons = async () => {
+export const getPokemons = async () => {
   const res = await fetch(url)
   const {results} = await res.json()
   let pokemons = []
@@ -18,10 +18,11 @@ const getPokemons = async () => {
   return pokemons
 }
 
-export const ceckLS = localStorage.getItem('pokemons') ? JSON.parse(localStorage.getItem('pokemons')) : getPokemons()
+export const ceckLS = localStorage.getItem('pokemons') ? JSON.parse(localStorage.getItem('pokemons')) : [];
 
 export const pokemonRender = async () => {
-  const pokemons = await ceckLS
+
+  const pokemons = await getPokemons();
   let html = ''
   for (const pokemon of pokemons) {
     let aux  = pokemon.sprites.other;
