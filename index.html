@@ -13,45 +13,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 </head>
   <body>
-      <div class="container-cart" id="container_cart">
-          <div>
-            <h2 class="container-cart--title">Bolsa de Compras</h2>
-            <div class="container-cart_items" id="container-cart_items">
-                <div class="cart-item">
-                    <div class="cart-item--operation">
-                        <button class="btn-cart-item--operation card_item_plus">+</button>
-                        <label for="">1</label>
-                        <button class="btn-cart-item--operation card_item_minus">-</button>
-                    </div>
-                    <div class="cart-item--flex">
-                        <img src="/assets/img/products/pizza_1.webp" class="cart-item--flex_image">
-                    </div>
-                    <div class="cart-item--flex cart-item--flex_att">
-                        <div class="cart_title_flex">Pizza Americana</div>
-                            <div class="cart_description_flex">Deliciosa Pizza para Disfrutar en familia</div>
-                            <div class="cart_price_flex">
-                                        <div>S/. 30.90</div>
-                        </div>
-                    </div>
-                    <div class="cart-item--delete">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z"/></svg>
-                    </div>
-                </div>
-            </div>
-          </div>
-        <div class="container-cart-footer">
-            <div class="container-cart-footer_totales">
-                <label for="">Total a Pagar</label>
-                <label for="" class="container-cart-footer_totales_price">S/. 50.00</label>
-            </div>
-            <div class="container-cart-footer_botones">
-                <button id="btn_cerrar_carrito">Cerrar </button>
-                <button>PAGAR</button>
-            </div>
-        </div>
-      </div>
+    <div class="shopping_bag"  id="handleCarritoCompra">
+        <img src="/assets/img/bag.png" alt="Bolsa de Compra">
+        <span class="shopping_bag_count" id="count">0</span>
+    </div>
+    
+
+      
       <header class="header">
           
         <nav id="menu">
@@ -86,6 +58,23 @@
       </div>
     <main>
         <section class="container_cards" id="mycards">
+            <div class="container-cart" id="container_cart">
+                <div>
+                  <h2 class="container-cart--title">Bolsa de Compras</h2>
+                  <div class="container-cart_items" id="container-cart_items">
+                  </div>
+                </div>
+              <div class="container-cart-footer">
+                  <div class="container-cart-footer_totales">
+                      <label for="">Total a Pagar</label>
+                      <label for="" class="container-cart-footer_totales_price" id="total_page">S/. 0.00</label>
+                  </div>
+                  <div class="container-cart-footer_botones">
+                      <button id="btn_cerrar_carrito">Cerrar </button>
+                      <button>PAGAR</button>
+                  </div>
+              </div>
+            </div>
                 <h2 class="container_cards--title">¡Los Favoritos!</h2>
               <div id="cards" class="cards">
                 
@@ -149,6 +138,8 @@
     </footer>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js" integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous"></script>
-    <script defer src="/assets/js/index.js" ></script>
+    <!-- <script defer src="/assets/js/index.js" ></script> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script defer src="/assets/js/pokemon.js" type="module" ></script>
   </body>
 </html>
